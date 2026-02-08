@@ -1,0 +1,36 @@
+#Part-A(ii)
+def Enqueue(instring):
+    global Queue
+    global HeadPointer
+    global TailPointer
+
+    if TailPointer == 50:
+        print("Queue Full!")
+    if HeadPointer == -1:
+        HeadPointer = 0
+    Queue[TailPointer].append(instring)
+    TailPointer = TailPointer + 1
+
+#Part-A(iii)
+def Dequeue():
+    global Queue
+    global HeadPointer
+
+    if HeadPointer == -1 or HeadPointer == TailPointer:
+        print("Queue Empty")
+        return "Empty"
+
+    HeadPointer = HeadPointer + 1
+    return Queue[HeadPointer - 1]
+
+#Part-B
+def ReadData():
+    r_file = open(QueueData, "r")
+    for line in r_file:
+        Enqueue(line.strip())
+    r_file.close()
+
+#Part-A(i)
+Queue = [""] * 50   #String Array of 50 Elements
+HeadPointer = -1   #Global Variable
+TailPointer = 0   #Global Variable
