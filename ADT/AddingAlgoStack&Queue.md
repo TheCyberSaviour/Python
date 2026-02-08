@@ -1,0 +1,19 @@
+# Stack/Queue + UDT
+
+## Push():
+
+* if FreePointer = 0 then Error StackFull
+* NewValue Stored in Index of FreePointer
+* Save FreePointer to TempPointer
+* FreePointer = Stack[FreePointer].Pointer #Update FreePointer
+* Put TopPointer = Stack[TempPointer].Pointer #For Pop
+* Put TempPointer in TopPointer
+
+## Push():
+
+* if FreePointer = 0 then Error QueueFull
+* NewValue Stored in Index of FreePointer
+* Save FreePointer to TempPointer
+* FreePointer = Queue[TempPointer].Pointer
+* if HeadPointer = 0 then HeadPointer = TempPointer #Update FreePointer 
+* TailPointer = TempPointer
